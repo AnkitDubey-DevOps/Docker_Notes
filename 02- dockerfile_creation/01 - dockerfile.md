@@ -153,3 +153,31 @@ docker run -p 3000:3000 myapp
 ```
 
 ---
+
+# Dockerfile: `COPY` vs `ADD`
+
+| `COPY` | `ADD` |
+|--------|--------|
+| Copies files/directories from local machine to image | Copies files/directories **and** has extra features |
+| Recommended for most use cases | Use only when needed |
+| Does **not** extract `.tar` files | Automatically extracts local `.tar` files |
+| Cannot download files from URLs | Can download files from URLs |
+
+### Rule of Thumb
+- ✅ Use **COPY** by default.
+- ✅ Use **ADD** only for:
+  - Extracting `.tar` files
+  - Downloading files from a URL (rarely recommended)
+
+
+# Dockerfile: `ARG` vs `ENV`
+
+| `ARG` | `ENV` |
+|-------|-------|
+| Available **only during image build** | Available during **build and container runtime** |
+| Can be changed using `--build-arg` | Stored in the image |
+| Not available inside the running container | Available inside the running container |
+
+### Rule of Thumb
+- ✅ Use **ARG** for **build-time values** (e.g., version numbers).
+- ✅ Use **ENV** for **runtime configuration** (e.g., PORT, DATABASE_URL).
