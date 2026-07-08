@@ -64,9 +64,7 @@ This is host isolated other containers cannot see the data, reading and writing 
 
 When to use tmpfs
 
-storing secrets
-high speed caching
-security compliances
+storing secrets, high speed caching, security compliances
 
 
 ### Docker Volume Useful Command
