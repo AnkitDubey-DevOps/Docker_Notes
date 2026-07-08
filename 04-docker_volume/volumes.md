@@ -47,3 +47,11 @@ it can be stored anywhere on the host system and are editable and accessible. Wh
 it is best for live development, you can edit a file on your computer and the container sees the changes instantly without restarting the computer.
 
 it is good for coding but risky for production if someone edit or delete the files from host computer your container breaks.
+
+```
+docker run -v <hostsystempath>:<dockercontainerpath> imageName
+```
+
+running this command will create a voulume. Any changes will be reflected into the host file or directory as per operation.
+
+it stores anywhere in your computer.
