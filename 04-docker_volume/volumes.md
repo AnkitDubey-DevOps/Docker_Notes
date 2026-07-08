@@ -55,3 +55,37 @@ docker run -v <hostsystempath>:<dockercontainerpath> imageName
 running this command will create a voulume. Any changes will be reflected into the host file or directory as per operation.
 
 it stores anywhere in your computer.
+
+### Tmpfs mounts
+these mounta are stored in the host stores RAM only. they are never written to the computer hard disk. while they appear as a normal as a normal folder inside the container, the data is volatile it is lost instantly if the container stops.
+this makes them perfect for storing sensitive data or high speed temporary files that you dont want persisting on the disk.
+
+This is host isolated other containers cannot see the data, reading and writing to RAM is much quicker than a disk.
+
+When to use tmpfs
+
+storing secrets
+high speed caching
+security compliances
+
+
+### Docker Volume Useful Command
+
+To create a named volume
+
+```
+docker volume create --name <VolumeName>
+```
+
+To list down all volumes on host system 
+
+```
+docker volume ls
+```
+
+to remove a volune
+
+```
+docker volume rm <volumeName>
+```
+
